@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Beatport Helpers",
+  "version": "0.1",
+  "author": "Geordie Powers <gp@gpow.ca>",
+  "web_accessible_resources": [],
+  "content_scripts": [
+    {
+      "matches": ["https://www.beatport.com/release/*"],
+      "js": ["content/pages/release.js"],
+      "css": ["content/release.css"]
+    }
+  ],
+  "permissions": [],
+  "background": {
+    "scripts": ["background/tagging.js"]
+  }
+}
