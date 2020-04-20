@@ -1,0 +1,17 @@
+{
+  "name": "Betterport",
+  "version": "1.0.0",
+  "repository": "https://github.com/GeordieP/betterport.git",
+  "author": "Geordie Powers <gp@gpow.ca>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "rollup": "^2.6.1",
+    "rollup-plugin-chrome-extension": "^2.2.0"
+  }
+}
