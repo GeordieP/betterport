@@ -1,9 +1,5 @@
 {
   "manifest_version": 2,
-  "name": "Betterport",
-  "version": "0.1",
-  "author": "Geordie Powers <gp@gpow.ca>",
-  "web_accessible_resources": [],
   "content_scripts": [
     {
       "matches": ["https://www.beatport.com/release/*"],
@@ -11,7 +7,6 @@
       "css": ["content/pages/release.css"]
     }
   ],
-  "permissions": [],
   "background": {
     "scripts": ["background/tagging.js"]
   }
