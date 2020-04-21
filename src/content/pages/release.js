@@ -1,3 +1,26 @@
+import Modal from "./modal.svelte";
+
+let modalInstance = null;
+
+function destroyModal() {
+  if (modalInstance != null) {
+    modalInstance.$destroy();
+    modalInstance = null;
+  }
+}
+
+function spawnModal(trackDetails) {
+  destroyModal();
+
+  modalInstance = new Modal({
+    target: document.body,
+    props: {
+      trackDetails,
+      onClose: destroyModal,
+    },
+  });
+}
+
 function getTrackInfo(trackRoot) {
   // TODO: column ordering, and which columns are shown, are user preference
   function getColValue(colNum) {
@@ -32,8 +55,8 @@ function addBtnToTrack(trackRoot) {
 
   newChild.addEventListener("click", (e) => {
     e.preventDefault();
-    const track = getTrackInfo(trackRoot);
-    console.log(`Clicked on ${track.artists} - ${track.title}`);
+
+    spawnModal(getTrackInfo(trackRoot));
   });
 
   trackRoot.children[3].children[0].children[0].appendChild(newChild);
